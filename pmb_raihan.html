@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Penerimaan Mahasiswa Baru</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 25px;
+        }
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #0056b3;
+            padding: 0 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .radio-group label,
+        .checkbox-group label {
+            font-weight: normal;
+            margin-right: 15px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+         .checkbox-group input {
+            margin-right: 10px;
+         }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Formulir Pendaftaran Mahasiswa Baru</h1>
+
+        <form action="#" method="POST">
+
+            <fieldset>
+                <legend>I. Data Pribadi</legend>
+                <div class="form-group">
+                    <label for="nama_lengkap">Nama Lengkap</label>
+                    <input type="text" id="nama_lengkap" name="nama_lengkap_cepi" required pattern="[A-Za-z\s]+">
+                </div>
+                <div class="form-group">
+                    <label for="nik">Nomor Induk Kependudukan (NIK)</label>
+                    <input type="text" id="nik" name="nik_cepi" required pattern="\d{16}" title="Harus 16 digit angka">
+                </div>
+                <div class="form-group">
+                    <label for="tempat_lahir">Tempat Lahir</label>
+                    <input type="text" id="tempat_lahir" name="tempat_lahir_cepi" required>
+                </div>
+                <div class="form-group">
+                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                    <input type="date" id="tanggal_lahir" name="tanggal_lahir_cepi" required>
+                </div>
+                <div class="form-group radio-group">
+                    <label>Jenis Kelamin</label>
+                    <input type="radio" id="laki" name="jenis_kelamin_cepi" value="Laki-laki" required> <label for="laki">Laki-laki</label>
+                    <input type="radio" id="perempuan" name="jenis_kelamin_cepi" value="Perempuan"> <label for="perempuan">Perempuan</label>
+                </div>
+                <div class="form-group">
+                    <label for="agama">Agama</label>
+                    <select id="agama" name="agama_cepi" required>
+                        <option value="">--Pilih Agama--</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Katolik">Katolik</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="Konghucu">Konghucu</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat Lengkap</label>
+                    <textarea id="alamat" name="alamat_cepi" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="no_hp">Nomor HP</label>
+                    <input type="tel" id="no_hp" name="no_hp_cepi" required pattern="[0-9]+">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email_cepi" required>
+                </div>
+                 <div class="form-group">
+                    <label for="status_pernikahan">Status Pernikahan</label>
+                    <select id="status_pernikahan" name="status_pernikahan_cepi">
+                        <option value="Belum Menikah">Belum Menikah</option>
+                        <option value="Menikah">Menikah</option>
+                        <option value="Cerai">Cerai</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>II. Data Sekolah Asal</legend>
+                 <div class="form-group">
+                    <label for="nama_sekolah">Nama Sekolah Asal</label>
+                    <input type="text" id="nama_sekolah" name="nama_sekolah_cepi" required>
+                </div>
+                <div class="form-group">
+                    <label for="jurusan">Jurusan di Sekolah</label>
+                    <select id="jurusan" name="jurusan_cepi">
+                        <option value="IPA">IPA</option>
+                        <option value="IPS">IPS</option>
+                        <option value="Bahasa">Bahasa</option>
+                        <option value="SMK">SMK</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tahun_lulus">Tahun Lulus</label>
+                    <input type="number" id="tahun_lulus" name="tahun_lulus_cepi" required pattern="\d{4}" title="Harus 4 digit angka">
+                </div>
+                <div class="form-group">
+                    <label for="nisn">Nomor Induk Siswa Nasional (NISN)</label>
+                    <input type="text" id="nisn" name="nisn_cepi" required pattern="\d{10}" title="Harus 10 digit angka">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>III. Pilihan Program Studi</legend>
+                <div class="form-group">
+                    <label for="pilihan1">Pilihan 1 Program Studi</label>
+                    <select id="pilihan1" name="pilihan1_cepi" required>
+                        <option value="">--Pilih Prodi--</option>
+                        <option value="Teknik Informatika">Teknik Informatika</option>
+                        <option value="Sistem Informasi">Sistem Informasi</option>
+                        <option value="Manajemen">Manajemen</option>
+                        <option value="Hukum">Hukum</option>
+                        <option value="Akuntansi">Akuntansi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pilihan2">Pilihan 2 Program Studi</label>
+                    <select id="pilihan2" name="pilihan2_cepi">
+                        <option value="">--Pilih Prodi (Opsional)--</option>
+                        <option value="Teknik Informatika">Teknik Informatika</option>
+                        <option value="Sistem Informasi">Sistem Informasi</option>
+                        <option value="Manajemen">Manajemen</option>
+                        <option value="Hukum">Hukum</option>
+                        <option value="Akuntansi">Akuntansi</option>
+                    </select>
+                </div>
+                 <div class="form-group radio-group">
+                    <label>Jalur Pendaftaran</label>
+                    <input type="radio" id="reguler" name="jalur_pendaftaran_cepi" value="Reguler" required> <label for="reguler">Reguler</label>
+                    <input type="radio" id="prestasi" name="jalur_pendaftaran_cepi" value="Prestasi"> <label for="prestasi">Prestasi</label>
+                    <input type="radio" id="afirmasi" name="jalur_pendaftaran_cepi" value="Afirmasi"> <label for="afirmasi">Afirmasi</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>IV. Dokumen Pendukung</legend>
+                 <div class="form-group">
+                    <label for="ijazah">Scan Ijazah/SKL (.pdf, .jpg, max 2MB)</label>
+                    <input type="file" id="ijazah" name="ijazah_cepi" required accept=".pdf,.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="ktp">Scan KTP/KK (.pdf, .jpg, max 2MB)</label>
+                    <input type="file" id="ktp" name="ktp_cepi" required accept=".pdf,.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="pas_foto">Pas Foto Resmi (.jpg, .png, max 1MB)</label>
+                    <input type="file" id="pas_foto" name="pas_foto_cepi" required accept=".jpg,.png">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>V. Pernyataan & Persetujuan</legend>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="persetujuan" name="persetujuan_cepi" required>
+                    <label for="persetujuan">Saya menyatakan bahwa semua data yang saya isikan adalah benar dan dapat dipertanggungjawabkan.</label>
+                </div>
+            </fieldset>
+
+            <input type="submit" value="Kirim Data Pendaftaran">
+        </form>
+    </div>
+
+</body>
+</html>
